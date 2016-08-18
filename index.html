@@ -63,44 +63,37 @@
     </section>
 
     <section>
-      <p lang="en-us">Would you rather see this on your e-commerce website..</p>
-      <p lang="pt-br">Você prefere uma loja assim...</p>
+      <p><span lang="en-us">Would you rather see this on your e-commerce website..</span><span lang="pt-br">Você prefere uma loja assim...</span></p>
       <img src="img/bike_ecom.png"/>
     </section>
 
     <section>
-      <p lang="en-us">or like this?</p>
-      <p lang="pt-br">ou assim?</p>
-      <iframe src="http://lmv.rocks/viewer/?url=http://lmv.rocks/data/bike/0.svf" height="600px" width="90%"></iframe>
+      <p><span lang="en-us">or like this?</span><span lang="pt-br">ou assim?</span></p>
+      <iframe src="http://lmv.rocks/viewer/?url=http://lmv.rocks/data/bike/0.svf" height="600px" width="70%" align="right" style="display:block"></iframe><img src="img/bike_ecom_price.png" style="display:block"/>
     </section>
 
     <section>
-      <p lang="en-us">What about documentation?</p>
-      <p lang="pt-br">E o manual de usuário?</p>
+      <p><span lang="en-us">What about documentation?</span><span lang="pt-br">E o manual de usuário?</span></p>
       <img src="img/user_manual.gif"/>
     </section>
 
     <section>
-      <p lang="en-us">Better!</p>
-      <p lang="pt-br">Bem melhor!</p>
+      <p><span lang="en-us">Better!</span><span lang="pt-br">Bem melhor!</span></p>
       <iframe src="http://trial.dotdotty.com/share/?shareId=431c-bac8-eedb-e43d-fc79&iframe=true" height="600px"
               width="90%"></iframe>
     </section>
 
     <section>
-      <p lang="en-us">And your house blueprint?</p>
-      <p lang="pt-br">Claro, o projeto da sua casa?</p>
+      <p><span lang="en-us">And your house blueprint?</span><span lang="pt-br">Claro, o projeto da sua casa?</span></p>
       <img src="img/house_blueprint.jpg"/>
     </section>
 
     <section>
-      <p lang="en-us">Power of 3d Web!</p>
-      <p lang="pt-br">Poder da web 3d!</p>
+      <p><span lang="en-us">Power of 3d Web!</span><span lang="pt-br">Poder da web 3d!</span></p>
       <iframe data-src="http://examples.developer.autodesk.com/lmv-navigation/" height="500px" width="80%"></iframe>
     </section>
     <section>
-      <h1 lang="en-us">How?</h1>
-      <h1 lang="pt-br">Como?</h1>
+      <h1><span lang="en-us">How?</span><span lang="pt-br">Como?</span></h1>
     </section>
     <section>
       <img src="img/webgl_woody.jpg">
@@ -110,20 +103,20 @@
       <img src="img/webgl_browser_support.png">
     </section>
     <section>
-      <h2 lang="en-us">Autodesk came out with a 3D/2D viewer...</h2>
-      <h2 lang="pt-br">Autodesk criou um viewer 3D/2D...</h2>
+      <h2><span lang="en-us">Autodesk came out with a 3D/2D viewer...</span>
+      <span lang="pt-br">Autodesk criou um viewer 3D/2D...</span></h2>
       <div class="row">
         <div class="col-xs-6 fragment">
           <h1><i class="fa fa-cloud-upload"></i></h1>
-          <p lang="en-us">Upload your CAD file</p>
-          <p lang="pt-br">Envie seu arquivo CAD</p>
+          <p><span lang="en-us">Upload your CAD file</span>
+          <span lang="pt-br">Envie seu arquivo CAD</span></p>
           <p>REST API</p>
         </div>
         <div class="col-xs-6 fragment">
           <h1><i class="fa fa-desktop"></i></h1>
-          <p lang="en-us">View on a browser</p>
-          <p lang="pt-br">Visualize no browser</p>
-          <p>JavaScript API</p>
+          <p><span lang="en-us">View on a browser</span>
+          <span lang="pt-br">Visualize no browser</span></p>
+          <p>JavaScript</p>
         </div>
       </div>
       <p class="fragment"><span lang="en-us">It's free</span><span lang="pt-br">É grátis</span></p>
@@ -198,6 +191,8 @@
   });
 
   function select_language(language) {
+    language = language.toLowerCase();
+    console.log('Language: ' + language);
     $("[lang]").each(function () {
       var attr = $(this).attr('lang');
       if (typeof attr !== typeof undefined && attr !== false) {
@@ -209,18 +204,7 @@
     });
   }
 
-  // trick to get the language...  :-)
-  // http://stackoverflow.com/a/3335420/4838205
-  $.ajax({
-    url: "http://ajaxhttpheaders.appspot.com",
-    dataType: 'jsonp',
-    success: function (headers) {
-      language = headers['Accept-Language'];
-      select_language(language.split(',')[0].toLowerCase());
-    }
-  });
-
-  select_language('pt-br');
+  select_language(navigator.languages[0]);
 
 </script>
 
