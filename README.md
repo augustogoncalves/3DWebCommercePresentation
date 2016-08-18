@@ -4,9 +4,12 @@ Presentation: What about e-commerce with the power of 3d web?
 
 See it live at http://augustogoncalves.github.io/3DWebCommercePresentation
 
+Using [Reveal.js](https://github.com/hakimel/reveal.js) Presentation Framework.
+
 ### Troubleshooting
 
 If the 3D webcontent don't show up, try enable "Load Unsafe Scripts" on your browser. The image below show it for Chrome.
+
 ![](img/load_unsafe_scripts.png)
 
 ## License
